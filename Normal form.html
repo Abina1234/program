@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <style>
+          h1{
+              color: brown;
+          }
+          body{
+              background-color: beige;
+          }
+        </style>
+        <title></title>
+        <script>
+            function validate()
+            {
+                if(document.myform.anme.value=="")
+        {
+          alert("Enter your name");
+          document.myform.anme.focus();
+          return false;
+        }  
+       if(document.myform.adds.value=="")
+        {
+          alert("Enter your address");
+          document.myform.adds.focus();
+          return false;
+        }   
+
+        if(document.myform.aagee.value=="")
+        {
+          alert("Enter your age");
+          document.myform.aagee.focus();
+          return false;
+        }
+        if(document.myform.adom.value=="")
+        {
+          alert("Enter valid date");
+          document.myform.adom.focus();
+          return false;
+        } 
+
+        if(document.myform.aphoneno.value.length!=10)
+        {
+          alert("Enter your phone number correctly");
+          document.myform.aphoneno.focus();
+          return false;
+        }
+        return true;
+            }
+        </script>
+    </head>
+        <body text="black">
+<center>
+          <h1><u>PATIENT REGISTRATION</u></h1>
+        
+         <form name="myform" action="loginadminchk.php" onsubmit="return validate()" method="POST">
+            <table  cellspacing="10">
+              <tr>
+                <td>PATIENT ID:</td>
+                <td><input type="text"></td>
+              </tr>
+              <tr>
+                <td>PATIENT NAME:</td>
+                <td><input type="text" name="anme"></td>
+              </tr>
+              <tr>
+                <td>AGE:</td>
+                <td><input type="number" name="aagee"></td>
+              </tr>
+              <tr>
+                  <td>ADDRESS:</td>
+                  <td><textarea name="adds" rows="7" cols="30"></textarea>
+                    </td>
+              </tr>
+              <tr>
+                <td>DATE OF ADMISSION:</td>
+                <td><input type="date" name="adom"></td>
+              </tr>
+              <tr>
+                <td>PHONE NUMBER:</td>
+                <td><input type="number" name="aphoneno"></td>
+              </tr>
+              <tr>
+                <td>GENDER:</td>
+                <td><input type="radio" id="html" name="agender" value="MALE">Male<br>
+                    <input type="radio" id="html" name="agender" value="FEMALE">Female</td>
+              </tr>
+              <tr>
+                  <td>DOCTOR'S NAME:</td>
+                  <td>
+                      <input type="text" name="adoctor">
+                  </td>
+              </tr>
+              <tr>
+                  <td>PRESCRIBE MEDICINE:</td>
+                  <td><textarea name="textarea" rows="7" cols="30"></textarea> </td>
+              </tr>
+        <td><input type="submit"  value="SUBMIT"></td>
+        </table>
+        </form>
+        </center>
+    </body>
+</html>
