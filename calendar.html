@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>calendar</title>
+    <script>
+        function calendar()
+        {
+            const month=[
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+        }
+            var year=Number(document.getElementById('year').value);
+            for( var mon=0;mon<12;mon++)
+            {
+                var d=new Date(year,mon);
+                console.log(d.getDate());
+                console.log(d.getDay());
+                d.setDate(d.getDate()+1);
+                var d=1;
+                if(mon==4||mon==8)
+                {
+                    document.write("</tr><tr>");
+                }
+                document.write("<td>");
+                document.write("<center><b>" +mon[d.getMonth()]+ "</b></center>");
+                document.write("<table><tr><td>SU</td><td>TU</td><td>WE</td><td>TH</td><td>FR</td><td>SA</td>");
+                for(i=0;i<=41;i++)
+                {
+                    if((i%7)==0)
+                    {
+                        document.write("</tr><tr>");   
+                    }
+                   else
+                    {
+                        document.write("<td></td>");
+                    }
+                    
+                }    
+            }
+            document.write("</tr></table>");
+            document.write("</td>");
+    </script>
+</head>
+<body>
+    <input type="text"id='year'>
+    <input type="button" value="calendar" onclick="calendar()">
+</body>
+</html>
